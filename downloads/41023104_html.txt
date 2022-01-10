@@ -1,4 +1,8 @@
-<h3>41023104</h3>
+<h3>&nbsp;41023204</h3>
+<p>網站倉儲:<span>&nbsp;</span><a href="https://github.com/04yxuan/cp2021-hw">https://github.com/04yxuan/cp2021-hw</a></p>
+<p>網站連結:&nbsp;<a href="https://04yxuan.github.io/cp2021-hw/">https://04yxuan.github.io/cp2021-hw/</a></p>
+<p><span>其他與個人或作業相關資料說明或介紹</span></p>
+<p><a href="/downloads/w12.txt"></a></p>
 <!-- 導入 brython 程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -37,7 +41,7 @@ function doSave(storage_id, filename){
 <script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
 </p>
-<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="w13">w13</button><button id="BSnake">BSnake</button><button id="final1">final1</button><button id="final2">final2</button></p>
+<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="w13_1">w13_1</button><button id="w13_2">w13_2</button><button id="final1">final1</button><button id="final2">final2</button><button id="final3">final3</button></p>
 <p><!-- ######################  editor1 開始 ###################### --></p>
 <p><!-- 用來顯示程式碼的 editor 區域 --></p>
 <div id="kw_editor1" style="width: 600px; height: 300px;"></div>
@@ -132,25 +136,30 @@ rocflag_url = "https://gist.githubusercontent.com/mdecourse/2f56974a40da7a218dba
 rocflag = button2(rocflag_url)
 doc["rocflag"].bind("click", rocflag.do)
 ################################## rocflag end
-################################# w13 start
-w13_url = "https://gist.githubusercontent.com/CHIA-ROU/11b2ba032bd450c7e65104c1e04407b1/raw/778fbe96ede5a3c7300ffda23d03664891d10d1d/gistfile2.txt"
-w13 = button2(w13_url)
-doc["w13"].bind('click', w13.do)
-################################## w13 end
-################################# BSnake start
-BSnake_url = "https://gist.githubusercontent.com/CHIA-ROU/11b2ba032bd450c7e65104c1e04407b1/raw/be29db08f8143a8289dc28bad92a19450421ec70/BSnake"
-BSnake = button2(BSnake_url)
-doc["BSnake"].bind('click', BSnake.do)
-################################## BSnake end
-################################# final1 start
-final1_url = "https://gist.githubusercontent.com/CHIA-ROU/093b4172d86b22a6c0e6e93cd7950cb2/raw/615d004f659647d76ea902bd75933405c888aa62/Final_1"
+################################# w13_1start 
+w13_1_url = "https://gist.githubusercontent.com/04yxuan/f49fa52f65bf052cd7fc09c7ab82b3e3/raw/8b1100dbed694a8d2b0cb1f34e27ac68eadc491b/w13_1"
+w13_1 = button2(w13_1_url)
+doc["w13_1"].bind('click', w13_1.do)
+################################## w13_1 end
+################################# w13_2start 
+w13_2_url = "https://gist.githubusercontent.com/04yxuan/49457d3d5d766667249de9be59be9e9e/raw/1d85acf416accd92c2d9efd7488088167aed6ba6/w13_2"
+w13_2 = button2(w13_2_url)
+doc["w13_2"].bind('click', w13_2.do)
+################################## w13_2 end
+################################# final1start 
+final1_url = "https://gist.githubusercontent.com/04yxuan/1aea6b1a117d7183f8ff112c1693ad2b/raw/d3402e1a4fbce19c3fa20cf9adc43c94ea71df69/final1"
 final1 = button2(final1_url)
 doc["final1"].bind('click', final1.do)
 ################################## final1 end
-################################# final2 start
-final2_url = "https://gist.githubusercontent.com/CHIA-ROU/feaac6bfc0b5cb645ff5cd1cd95348cd/raw/c19898eda0f20b403f34faca76e8fab0e1a9965f/Final_2"
+################################# final2 start 
+final2_url = "https://gist.githubusercontent.com/04yxuan/99f50a6416525317f933bc58906c3179/raw/f24d84044df5b545d988feb3e5f984baa807b815/final2"
 final2 = button2(final2_url)
 doc["final2"].bind('click', final2.do)
 ################################## final2 end
+################################# final3 start 
+final3_url = "https://gist.githubusercontent.com/04yxuan/b31944681c10110eda4e75a3e594deef/raw/68923ef6f1b98e9de0d2b1b0843d91d05caa15c9/final3"
+final3 = button2(final3_url)
+doc["final3"].bind('click', final3.do)
+################################## final3 end
 // ]]></script>
 </p>
