@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 # ref: https://stackoverflow.com/questions/3845423/remove-empty-strings-from-a-list-of-strings
 
 # Global parameters setup
-repo_path = "Y:/tmp/cp2021_final"
+repo_path = "./../"
 class_name = "1a"
 group_file = repo_path + "/downloads/" + class_name + "_grouping.txt"
 page_head = "h2"
@@ -17,8 +17,8 @@ origin_html = """<h1>About</h1>
 <p>Discussion: <a href="https://github.com/mdecourse/cp2021_final/discussions">https://github.com/mdecourse/cp2021_final/discussions</a></p>
 <p>課程網站: <a href="https://mde.tw/cp2021">https://mde.tw/cp2021</a></p>
 <p>作業網站: <a href="https://mde.tw/cp2021_hw">https://mde.tw/cp2021_hw</a></p>
-<p><a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/040036c57b1d81cc1c0608fe66316651/raw/42746c1e3d22aefbf0bd78fec4945d1c54243930/cp2021_1a_random_select.py">1a 抽點 10 位學員</a>查驗其作業倉儲與網站 (<a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/040036c57b1d81cc1c0608fe66316651/raw/e7aa175bdf9d43d47ed521ab84bf6018054fe28e/cp2021_1a_list.py">1a 學員倉儲與網站</a>).</p>
-<p><a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/040036c57b1d81cc1c0608fe66316651/raw/42746c1e3d22aefbf0bd78fec4945d1c54243930/cp2021_1b_random_select.py">1b 抽點 10 位學員</a>查驗其作業倉儲與網站 (<a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/040036c57b1d81cc1c0608fe66316651/raw/42746c1e3d22aefbf0bd78fec4945d1c54243930/cp2021_1b_list.py">1b 學員倉儲與網站</a>).</p>
+<p><a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/040036c57b1d81cc1c0608fe66316651/raw/e294d920d8b496b9c7bfe9ee772e6d23b5d81c76/cp2021_1a_random_select.py">1a 抽點 10 位學員</a>查驗其作業倉儲與網站 (<a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/040036c57b1d81cc1c0608fe66316651/raw/e294d920d8b496b9c7bfe9ee772e6d23b5d81c76/cp2021_1a_list.py">1a 學員倉儲與網站</a>).</p>
+<p><a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/040036c57b1d81cc1c0608fe66316651/raw/e294d920d8b496b9c7bfe9ee772e6d23b5d81c76/cp2021_1b_random_select.py">1b 抽點 10 位學員</a>查驗其作業倉儲與網站 (<a href="https://mde.tw/cp2021/content/run.html?src=https://gist.githubusercontent.com/mdecourse/040036c57b1d81cc1c0608fe66316651/raw/e294d920d8b496b9c7bfe9ee772e6d23b5d81c76/cp2021_1b_list.py">1b 學員倉儲與網站</a>).</p>
 <h2>Programming</h2>
 <p>以下為各組長所提供的學員名單格式，其中以各組組序標題開頭，然後逐一列出各組員學號:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">1ag1
@@ -364,11 +364,12 @@ def get_html(grp_title, student_id):
                     i.insert_after(j)
         output = str(soup)
         #print(output)
-        output = output.replace("<html><body", "")
+        output = output.replace("<html><body>", "")
         output = output.replace("</body></html>", "")
         output = output.replace("// <![CDATA[", "")
         output = output.replace("// ]]>", "")
-        output = output.replace("&gt;", "")
+        #output = output.replace("&gt;", "")
+        output = output.replace("<p></p>", "")
         return output
     except:
         #print("no file found for " + str(student_id))
@@ -415,6 +416,8 @@ for i in range(len(grp_title)):
     # j is student id for each member
     for j in stud_list:
         content = get_html(grp_title[i], j)
+        content = content.replace("<p></p>", "")
+        content = content.replace("&gt;", "")
         if content != "":
             print(j)
             #print(content)
